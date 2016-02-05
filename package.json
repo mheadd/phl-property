@@ -1,0 +1,19 @@
+{
+  "name": "phl-property",
+  "version": "0.5.0",
+  "description": "A Node.js module for looking up information on properties in the City of Philadelphia.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mheadd/phl-property"
+  },
+  "author": "Mark Headd <mheadd@gmail.com> (http://civic.io/)",
+  "bugs": {
+    "url": "https://github.com/mheadd/phl-property/issues"
+  },
+  "homepage": "https://github.com/mheadd/phl-property",
+  "dependencies": {
+    "async": "^1.5.2",
+    "request": "^2.69.0"
+  }
+}
