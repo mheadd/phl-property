@@ -13,7 +13,7 @@ exports.getPropertyInfo = function(address, callback) {
 		],
 		function generateResponse(error, body) {
 			if(!error) {
-				callback(error, JSON.parse(body));
+				callback(null, JSON.parse(body));
 			}
 			else {
 				callback({ error: error.message });
