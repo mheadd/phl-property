@@ -12,7 +12,12 @@ exports.getPropertyInfo = function(address, callback) {
 			getAddressDetails
 		],
 		function generateResponse(error, body) {
-			callback(error, JSON.parse(body));
+			if(!error) {
+				callback(error, JSON.parse(body));
+			}
+			else {
+				callback({ error: error.message });
+			}
 		});
 }
 

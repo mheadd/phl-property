@@ -1,10 +1,12 @@
 var property = require('../index');
 
-property.getPropertyInfo('1234 Market Street', function(error, response) {
+var address = process.argv[2] || '1234 Market Street';
+
+property.getPropertyInfo(address, function(error, response) {
 	if(!error) {
 		console.log(JSON.stringify(response));
 	}
 	else {
-		console.log(error.message)
+		console.log(JSON.stringify(error));
 	}
 });
