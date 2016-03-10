@@ -10,6 +10,12 @@ Install via npm:
 ~$ npm install phl-property --save
 ```
 
+Run tests:
+
+```
+~$ npm test
+``` 
+
 Look up information on a property:
 
 ```javascript
@@ -24,6 +30,8 @@ property.getPropertyInfo('1234 Market Street', function(error, response) {
 	}
 });
 ```
+
+Response:
 
 ```json
 [
@@ -94,6 +102,8 @@ property.getStandardizedAddress('1234 market', function(error, response) {
 });
 
 ```
+
+Response:
 
 ```json
 {

@@ -16,7 +16,7 @@ exports.getPropertyInfo = function(address, callback) {
 				callback(null, JSON.parse(body));
 			}
 			else {
-				callback({ error: error.message });
+				callback({ message: error.message });
 			}
 		});
 }
@@ -26,6 +26,7 @@ exports.getStandardizedAddress = function(address, callback) {
 	standardizeAddress(address, callback); 
 }
 
+// Standardize address and location information for a property.
 function standardizeAddress(address, callback) {
 	var url = address_url + encodeURIComponent(address) + '?format=json';
 	request(url, function(err, resp, body) {
@@ -34,6 +35,7 @@ function standardizeAddress(address, callback) {
 	});
 }
 
+// Get property details for an address.
 function getAddressDetails(body, callback) {
 	var addresses = JSON.parse(body).addresses
 	if(addresses.length == 0) {
