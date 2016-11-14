@@ -1,6 +1,6 @@
 {
   "name": "phl-property",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A Node.js module for looking up information on properties in the City of Philadelphia.",
   "main": "index.js",
   "scripts": {
