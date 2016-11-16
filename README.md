@@ -2,6 +2,8 @@
 
 A Node.js module for looking up information on properties in the City of Philadelphia.
 
+Note - this module is deprecated because of [changes to the API](https://github.com/CityOfPhiladelphia/trashday#trash-day) it was meant to be used with. Since the underlying API is now much simpler, a full Node wrapper is probably not needed. Just use a generic module like [Request](https://www.npmjs.com/package/request) or HTTP/S in the [standard library](https://nodejs.org/api/http.html)
+
 ## Usage
 
 Install via npm: 
