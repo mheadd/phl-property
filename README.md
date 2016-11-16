@@ -34,101 +34,114 @@ property.getPropertyInfo('1234 Market Street', function(error, response) {
 Response:
 
 ```json
+[
+  {
+    "sanitation_area": "2",
+    "planning_district": "Central",
+    "water_plate": "28A",
+    "traffic_pm_district": "1206",
+    "pwd_center_city_district": "In",
+    "tract_2010": "500",
+    "high_school": "Franklin HS",
+    "rubbish": "WED",
+    "traffic_district": "1",
+    "ward": "5",
+    "rising": "Market East",
+    "recycle": "WED",
+    "ppd_div": "CPD",
+    "pwd_wtpsa": "EAST PARK",
+    "council_2016": "1",
+    "ppd_district": "6",
+    "recycling_diversion_rate_score": "8.8",
+    "x_coord": "2694254",
+    "blkgrp_2000": "3",
+    "leaf": "Saturday Bag Dropoff",
+    "highway_district": "3",
+    "y_coord": "235888",
+    "middle_school": "McCall",
+    "ward_div": "0528",
+    "fire_district": "20",
+    "highway_section": "3N",
+    "lni_district": "Central",
+    "street_light_route": "13",
+    "rec_district": "10",
+    "tract_2000": "000500",
+    "address_id": "1234 MARKET ST",
+    "highway_subsection": "3N 1",
+    "council_2000": "1",
+    "block_2000": "3012",
+    "elementary_school": "McCall",
+    "block_2010": "1017",
+    "sanitation_district": "2B",
+    "center_city_district": "In",
+    "zipcode": "19107",
+    "ppd_sector": "6J",
+    "neighborhood": "MARKET EAST",
+    "psa": "063",
+    "pwd_pres_dist": "EPG",
+    "pwd_maint_dist": "3E",
+    "blkgrp_2010": "1"
+  }
+]
+
+
+```
+
+You can also standardize an address string or get geospatial information for a property to use in another module or application:
+
+```javascript
+var property = require('phl-property');
+
+property.getStandardizedAddress('1234 market', function(error, response) {
+  if(!error) {
+    console.log(response);
+  }
+  else {
+    console.log(error);
+  }
+});
+
+```
+
+Response:
+
+```json
 {
-  "normalized": [
-    "1234 MARKET ST"
-  ],
-  "query": "1234 Market Street",
-  "page": 1,
-  "page_count": 1,
-  "page_size": 1,
-  "total_size": 1,
-  "type": "FeatureCollection",
-  "features": [
+  "addresses": [
     {
-      "type": "Feature",
-      "properties": {
-        "street_address": "1234 MARKET ST",
-        "address_low": 1234,
-        "address_low_suffix": "",
-        "address_low_frac": "",
-        "address_high": null,
-        "street_predir": "",
-        "street_name": "MARKET",
-        "street_suffix": "ST",
-        "street_postdir": "",
-        "unit_type": "",
-        "unit_num": "",
-        "street_full": "MARKET ST",
-        "street_code": 53560,
-        "zip_code": "19107",
-        "zip_4": "",
-        "usps_bldgfirm": "JOHN WANAMAKER FINANCE STATION",
-        "usps_type": "",
-        "election_block_id": "24021362",
-        "election_precinct": "0528",
-        "pwd_parcel_id": "542611",
-        "dor_parcel_id": "001S070144",
-        "li_address_key": "410516",
-        "pwd_account_nums": [
-          "5356001234001",
-          "5356001234005"
-        ],
-        "opa_account_num": "875100760",
-        "opa_owners": [
-          "SEPTA"
-        ],
-        "opa_address": "1234 MARKET ST",
-        "geom_type": "centroid",
-        "geom_source": "pwd_parcel",
-        "center_city_district": "In",
-        "cua_zone": "Bethanna",
-        "li_district": "Central",
-        "philly_rising_area": "Market East",
-        "census_tract_2010": "000500",
-        "census_block_group_2010": "1",
-        "census_block_2010": "1017",
-        "council_district_2016": "1",
-        "political_ward": "5",
-        "political_division": "0528",
-        "planning_district": "Central",
-        "elementary_school": "McCall",
-        "middle_school": "McCall",
-        "high_school": "Franklin HS",
-        "zoning": "CMX5",
-        "police_division": "CPD",
-        "police_district": "6",
-        "police_service_area": "063",
-        "recreation_district": "10",
-        "rubbish_recycle_day": "WED",
-        "recycling_diversion_rate": 0.088,
-        "leaf_collection_area": "Saturday Bag Dropoff",
-        "sanitation_area": "2",
-        "sanitation_district": "2B",
-        "historic_street": "",
-        "highway_district": "3",
-        "highway_section": "3N",
-        "highway_subsection": "3N1",
-        "traffic_district": "1",
-        "traffic_pm_district": "1206",
-        "street_light_route": "13",
-        "pwd_maint_district": "3E",
-        "pwd_pressure_district": "EPG",
-        "pwd_treatment_plant": "EAST PARK",
-        "pwd_water_plate": "28A",
-        "pwd_center_city_district": "In"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.16097658476633,
-          39.95166165567195
-        ]
-      }
+      "links": [
+        {
+          "method": "GET",
+          "href": "https://api.phila.gov/ulrs/v3/addresses/1234%20MARKET%20ST/parcels",
+          "rel": "parcels"
+        },
+        {
+          "method": "GET",
+          "href": "https://api.phila.gov/ulrs/v3/addresses/1234%20MARKET%20ST/topics",
+          "rel": "topics"
+        },
+        {
+          "method": "GET",
+          "href": "https://api.phila.gov/ulrs/v3/addresses/1234%20MARKET%20ST/data",
+          "rel": "data"
+        }
+      ],
+      "segmentId2": -1,
+      "segmentId": 440394,
+      "streetCode2": 0,
+      "streetType": "ST",
+      "streetName": "MARKET",
+      "streetPrefix": null,
+      "streetFullName": "MARKET ST",
+      "xCoord": 2694254,
+      "yCoord": 235888,
+      "matchType": "Parcel",
+      "rawAddress": "1234 market",
+      "standardizedAddress": "1234 MARKET ST",
+      "similarity": 91.5835411471322,
+      "streetNumber": 1234,
+      "streetCode": 53560
     }
   ]
 }
-
-
-
 ```

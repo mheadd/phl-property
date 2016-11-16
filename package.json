@@ -1,6 +1,6 @@
 {
   "name": "phl-property",
-  "version": "0.8.0",
+  "version": "0.7.0",
   "description": "A Node.js module for looking up information on properties in the City of Philadelphia.",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/mheadd/phl-property",
   "dependencies": {
+    "async": "^1.5.2",
     "request": "^2.69.0"
   },
   "devDependencies": {
